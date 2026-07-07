@@ -1,0 +1,98 @@
+{
+  "wireless-earbuds-guide-pick": {
+    "url": "https://example.com/wireless-earbuds-guide-pick",
+    "enabled": true,
+    "category": "electronics",
+    "categoryLabel": "Electronics",
+    "title": "Wireless Earbuds Guide Pick",
+    "description": "A practical audio option for people who care about fit, call clarity, daily battery life, and simple controls.",
+    "tags": ["Audio", "Daily carry", "Value pick"],
+    "imageKey": "electronics",
+    "imagePosition": "50% 48%",
+    "cta": "See pick"
+  },
+  "portable-charging-setup": {
+    "url": "https://example.com/portable-charging-setup",
+    "enabled": true,
+    "category": "electronics",
+    "categoryLabel": "Electronics",
+    "title": "Portable Charging Setup",
+    "description": "A compact charging setup for travel days, desk bags, and keeping your daily devices topped up without cable clutter.",
+    "tags": ["Charging", "Travel", "Desk setup"],
+    "imageKey": "electronics",
+    "imagePosition": "44% 52%",
+    "cta": "Check price"
+  },
+  "minimal-jacket-style-pick": {
+    "url": "https://example.com/minimal-jacket-style-pick",
+    "enabled": true,
+    "category": "apparel",
+    "categoryLabel": "Apparel",
+    "title": "Minimal Jacket Style Pick",
+    "description": "A clean layering option for making simple outfits feel more finished without relying on loud details.",
+    "tags": ["Outerwear", "Capsule style", "Seasonal"],
+    "imageKey": "apparel",
+    "imagePosition": "50% 50%",
+    "cta": "See pick"
+  },
+  "everyday-knitwear": {
+    "url": "https://example.com/everyday-knitwear",
+    "enabled": true,
+    "category": "apparel",
+    "categoryLabel": "Apparel",
+    "title": "Everyday Knitwear",
+    "description": "Soft, versatile layers that balance comfort, texture, care requirements, and price.",
+    "tags": ["Knitwear", "Comfort", "Easy care"],
+    "imageKey": "apparel",
+    "imagePosition": "46% 54%",
+    "cta": "See pick"
+  },
+  "white-sneaker-style-pick": {
+    "url": "https://example.com/white-sneaker-style-pick",
+    "enabled": true,
+    "category": "shoes",
+    "categoryLabel": "Shoes",
+    "title": "White Sneaker Style Pick",
+    "description": "A clean everyday sneaker direction for casual outfits, travel looks, and simple wardrobes.",
+    "tags": ["Sneakers", "Comfort", "Wardrobe staple"],
+    "imageKey": "shoes",
+    "imagePosition": "54% 50%",
+    "cta": "See pick"
+  },
+  "comfort-walking-shoes": {
+    "url": "https://example.com/comfort-walking-shoes",
+    "enabled": true,
+    "category": "shoes",
+    "categoryLabel": "Shoes",
+    "title": "Comfort Walking Shoes",
+    "description": "Supportive pairs for errands, trips, and long days where cushioning matters more than hype.",
+    "tags": ["Walking", "Support", "Travel"],
+    "imageKey": "shoes",
+    "imagePosition": "48% 52%",
+    "cta": "Check price"
+  },
+  "simple-skincare-starter-pick": {
+    "url": "https://example.com/simple-skincare-starter-pick",
+    "enabled": true,
+    "category": "skincare",
+    "categoryLabel": "Skincare",
+    "title": "Simple Skincare Starter Pick",
+    "description": "A simple routine direction for cleanser, moisturizer, sunscreen, and gentle add-ons that are easy to understand.",
+    "tags": ["Routine", "Gentle", "Daily use"],
+    "imageKey": "skincare",
+    "imagePosition": "50% 50%",
+    "cta": "See pick"
+  },
+  "serum-and-moisture-edit": {
+    "url": "https://example.com/serum-and-moisture-edit",
+    "enabled": true,
+    "category": "skincare",
+    "categoryLabel": "Skincare",
+    "title": "Serum & Moisture Edit",
+    "description": "Focused hydration and barrier-support picks with clear ingredient positioning and realistic claims.",
+    "tags": ["Hydration", "Barrier care", "No hype"],
+    "imageKey": "skincare",
+    "imagePosition": "46% 52%",
+    "cta": "See pick"
+  }
+}

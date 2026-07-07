@@ -1,0 +1,26 @@
+{
+  "default": {
+    "src": "/assets/women-hero-editorial.png",
+    "alt": "Elegant fashion, beauty, shoes and useful tech arranged on a bright studio surface"
+  },
+  "hero": {
+    "src": "/assets/women-hero-editorial.png",
+    "alt": "Elegant fashion, beauty, shoes and useful tech arranged on a bright studio surface"
+  },
+  "electronics": {
+    "src": "/assets/women-gear-edit.png",
+    "alt": "Useful tech accessories arranged with feminine desk essentials"
+  },
+  "apparel": {
+    "src": "/assets/women-style-edit.png",
+    "alt": "Elegant women's wardrobe essentials and accessories"
+  },
+  "shoes": {
+    "src": "/assets/women-shoes-edit.png",
+    "alt": "Women's sneakers and flats styled with soft accessories"
+  },
+  "skincare": {
+    "src": "/assets/women-beauty-edit.png",
+    "alt": "Skincare and beauty essentials on a warm vanity"
+  }
+}

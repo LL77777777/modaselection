@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Redirecting | Moda Selection</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="redirect-page">
+      <section class="redirect-box">
+        <p class="eyebrow">Moda Selection</p>
+        <h1>Redirecting</h1>
+        <p data-status>Opening the product page...</p>
+        <p class="redirect-note">Moda Selection may earn from qualifying purchases made through our links.</p>
+        <a class="button secondary" href="/">Back to homepage</a>
+      </section>
+    </main>
+
+    <script>
+      const statusText = document.querySelector("[data-status]");
+      const queryOffer = new URLSearchParams(window.location.search).get("offer");
+      const pathOffer = window.location.pathname.replace(/^\/+|\/+$/g, "");
+      const offerName = queryOffer || pathOffer;
+
+      fetch("/data/offers.json", { cache: "no-store" })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Product data not found.");
+          }
+
+          return response.json();
+        })
+        .then((offers) => {
+          const offer = offers[offerName];
+
+          if (!offer || offer.enabled === false || !offer.url) {
+            statusText.textContent = "This product page is not available yet.";
+            return;
+          }
+
+          statusText.textContent = `Opening ${offer.title || offerName}...`;
+          window.location.replace(offer.url);
+        })
+        .catch(() => {
+          statusText.textContent = "Product page could not be loaded.";
+        });
+    </script>
+  </body>
+</html>
