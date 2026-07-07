@@ -83,8 +83,8 @@ Current homepage categories:
 
 ## Images
 
-Keep image files inside `assets/`.
+Keep primary brand images inside `assets/` when possible.
 
-Manage image keys in `data/images.json`, then reference those keys from `data/offers.json` with `imageKey`. This keeps the site off remote image URLs and avoids broken third-party images.
+Manage image keys in `data/images.json`, then reference those keys from `data/offers.json` with `imageKey`. Each image entry can use a local path such as `/assets/example.png` or a stable stock image URL. Use distinct keys for different offers so homepage cards do not repeat the same visual too often.
 
 The homepage includes a visible affiliate disclosure. The FTC guidance for endorsements and online disclosures emphasizes clear and conspicuous disclosure of material connections.

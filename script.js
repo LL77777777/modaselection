@@ -2,6 +2,8 @@ const header = document.querySelector("[data-header]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const filterLinks = document.querySelectorAll("[data-filter-link]");
 const productGrid = document.querySelector("[data-products]");
+const carouselPrev = document.querySelector("[data-carousel-prev]");
+const carouselNext = document.querySelector("[data-carousel-next]");
 const managedImages = document.querySelectorAll("[data-managed-image]");
 
 let activeFilter = "all";
@@ -70,6 +72,25 @@ const setActiveFilter = (category) => {
     const isVisible = category === "all" || card.dataset.category === category;
     card.classList.toggle("is-hidden", !isVisible);
   });
+
+  if (productGrid) {
+    productGrid.scrollTo({ left: 0, behavior: "smooth" });
+  }
+};
+
+const scrollProductCarousel = (direction) => {
+  if (!productGrid) {
+    return;
+  }
+
+  const card = productGrid.querySelector(".product-card:not(.is-hidden)");
+  const gap = parseFloat(getComputedStyle(productGrid).columnGap) || 18;
+  const distance = card ? card.getBoundingClientRect().width + gap : productGrid.clientWidth * 0.85;
+
+  productGrid.scrollBy({
+    left: direction * distance,
+    behavior: "smooth"
+  });
 };
 
 const loadOfferData = async () => {
@@ -106,5 +127,8 @@ filterButtons.forEach((button) => {
 filterLinks.forEach((link) => {
   link.addEventListener("click", () => setActiveFilter(link.dataset.filterLink));
 });
+
+carouselPrev?.addEventListener("click", () => scrollProductCarousel(-1));
+carouselNext?.addEventListener("click", () => scrollProductCarousel(1));
 
 loadOfferData();

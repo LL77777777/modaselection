@@ -7,7 +7,7 @@
     "title": "Wireless Earbuds Guide Pick",
     "description": "A practical audio option for people who care about fit, call clarity, daily battery life, and simple controls.",
     "tags": ["Audio", "Daily carry", "Value pick"],
-    "imageKey": "electronics",
+    "imageKey": "earbuds-pick",
     "imagePosition": "50% 48%",
     "cta": "See pick"
   },
@@ -19,7 +19,7 @@
     "title": "Portable Charging Setup",
     "description": "A compact charging setup for travel days, desk bags, and keeping your daily devices topped up without cable clutter.",
     "tags": ["Charging", "Travel", "Desk setup"],
-    "imageKey": "electronics",
+    "imageKey": "charging-setup",
     "imagePosition": "44% 52%",
     "cta": "Check price"
   },
@@ -31,7 +31,7 @@
     "title": "Minimal Jacket Style Pick",
     "description": "A clean layering option for making simple outfits feel more finished without relying on loud details.",
     "tags": ["Outerwear", "Capsule style", "Seasonal"],
-    "imageKey": "apparel",
+    "imageKey": "minimal-jacket",
     "imagePosition": "50% 50%",
     "cta": "See pick"
   },
@@ -43,7 +43,7 @@
     "title": "Everyday Knitwear",
     "description": "Soft, versatile layers that balance comfort, texture, care requirements, and price.",
     "tags": ["Knitwear", "Comfort", "Easy care"],
-    "imageKey": "apparel",
+    "imageKey": "everyday-knitwear",
     "imagePosition": "46% 54%",
     "cta": "See pick"
   },
@@ -55,7 +55,7 @@
     "title": "White Sneaker Style Pick",
     "description": "A clean everyday sneaker direction for casual outfits, travel looks, and simple wardrobes.",
     "tags": ["Sneakers", "Comfort", "Wardrobe staple"],
-    "imageKey": "shoes",
+    "imageKey": "white-sneakers",
     "imagePosition": "54% 50%",
     "cta": "See pick"
   },
@@ -67,7 +67,7 @@
     "title": "Comfort Walking Shoes",
     "description": "Supportive pairs for errands, trips, and long days where cushioning matters more than hype.",
     "tags": ["Walking", "Support", "Travel"],
-    "imageKey": "shoes",
+    "imageKey": "walking-shoes",
     "imagePosition": "48% 52%",
     "cta": "Check price"
   },
@@ -79,7 +79,7 @@
     "title": "Simple Skincare Starter Pick",
     "description": "A simple routine direction for cleanser, moisturizer, sunscreen, and gentle add-ons that are easy to understand.",
     "tags": ["Routine", "Gentle", "Daily use"],
-    "imageKey": "skincare",
+    "imageKey": "skincare-starter",
     "imagePosition": "50% 50%",
     "cta": "See pick"
   },
@@ -91,7 +91,7 @@
     "title": "Serum & Moisture Edit",
     "description": "Focused hydration and barrier-support picks with clear ingredient positioning and realistic claims.",
     "tags": ["Hydration", "Barrier care", "No hype"],
-    "imageKey": "skincare",
+    "imageKey": "serum-moisture",
     "imagePosition": "46% 52%",
     "cta": "See pick"
   }

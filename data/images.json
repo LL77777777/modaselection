@@ -22,5 +22,37 @@
   "skincare": {
     "src": "/assets/women-beauty-edit.png",
     "alt": "Skincare and beauty essentials on a warm vanity"
+  },
+  "earbuds-pick": {
+    "src": "https://images.unsplash.com/photo-1684987642665-1cc085392d2e?auto=format&fit=crop&w=900&q=80",
+    "alt": "Phone, earbuds and small desk items arranged on a table"
+  },
+  "charging-setup": {
+    "src": "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=900&q=80",
+    "alt": "Laptop, phone, notebook and desk accessories on a clean workspace"
+  },
+  "minimal-jacket": {
+    "src": "https://images.unsplash.com/photo-1673710672680-944563ff9cce?auto=format&fit=crop&w=900&q=80",
+    "alt": "Perfume, jewelry and cream blazer arranged in sunlight"
+  },
+  "everyday-knitwear": {
+    "src": "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=80",
+    "alt": "Women's clothing arranged as a casual outfit flat lay"
+  },
+  "white-sneakers": {
+    "src": "https://images.unsplash.com/photo-1542280756-74b2f55e73ab?auto=format&fit=crop&w=900&q=80",
+    "alt": "White sneakers photographed on a dark background"
+  },
+  "walking-shoes": {
+    "src": "https://images.unsplash.com/photo-1730447153639-f559d50a91ec?auto=format&fit=crop&w=900&q=80",
+    "alt": "White sneakers and gray socks on dark fabric"
+  },
+  "skincare-starter": {
+    "src": "https://images.unsplash.com/photo-1741896136113-c33a4fded0b5?auto=format&fit=crop&w=900&q=80",
+    "alt": "Skincare bottles arranged on a pink background"
+  },
+  "serum-moisture": {
+    "src": "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=900&q=80",
+    "alt": "Beauty tools and skincare textures arranged in soft light"
   }
 }
