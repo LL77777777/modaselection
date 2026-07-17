@@ -394,57 +394,6 @@ input {
   padding: 0 20px;
 }
 
-.journal-directory {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
-  gap: clamp(24px, 5vw, 72px);
-  margin-top: clamp(42px, 6vw, 76px);
-  padding-top: clamp(30px, 4vw, 48px);
-  border-top: 1px solid rgba(33, 28, 32, 0.18);
-}
-
-.journal-directory-heading h3 {
-  max-width: 420px;
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  font-weight: 500;
-  line-height: 1.02;
-}
-
-.journal-link-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  background: rgba(33, 28, 32, 0.15);
-}
-
-.journal-link-grid a {
-  display: grid;
-  align-content: start;
-  gap: 7px;
-  min-height: 118px;
-  padding: 20px;
-  background: rgba(255, 250, 251, 0.84);
-  transition: background 160ms ease;
-}
-
-.journal-link-grid a:hover {
-  background: var(--paper-strong);
-}
-
-.journal-link-grid span {
-  color: var(--clay);
-  font-size: 0.76rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.journal-link-grid strong {
-  font-size: 1.02rem;
-  line-height: 1.28;
-}
-
 .quiet-disclosure {
   margin: -12px 0 24px;
   color: var(--muted);
@@ -1097,8 +1046,7 @@ h3 {
 @media (max-width: 860px) {
   .split-heading,
   .method,
-  .newsletter,
-  .journal-directory {
+  .newsletter {
     grid-template-columns: 1fr;
   }
 }
@@ -1138,10 +1086,6 @@ h3 {
   .edit-grid,
   .article-index,
   .note-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .journal-link-grid {
     grid-template-columns: 1fr;
   }
 
