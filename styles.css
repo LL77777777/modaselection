@@ -73,7 +73,6 @@ input {
 .hero-actions,
 .toolbar,
 .product-meta,
-.signup-row,
 .footer-links {
   display: flex;
   align-items: center;
@@ -865,32 +864,9 @@ h3 {
   background: #eee1da;
 }
 
-.signup {
-  padding: 24px;
-  border: 1px solid rgba(30, 33, 31, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 250, 243, 0.62);
-}
-
-.signup label {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-weight: 850;
-}
-
-.signup-row {
-  gap: 10px;
-}
-
-.signup input {
-  width: 100%;
-  min-height: 48px;
-  padding: 0 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--ink);
+.contact-action {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .site-footer {
@@ -1158,18 +1134,20 @@ h3 {
     gap: 6px;
   }
 
-  .signup-row,
   .site-footer {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .contact-action {
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 440px) {
   .button,
   .filter,
-  .product-link,
-  .signup-row .button {
+  .product-link {
     width: 100%;
   }
 
