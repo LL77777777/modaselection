@@ -762,6 +762,11 @@ h3 {
   margin-top: auto;
 }
 
+.journal-carousel-card:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 4px;
+}
+
 .loading-note {
   grid-column: 1 / -1;
   margin: 0;

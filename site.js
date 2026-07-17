@@ -55,15 +55,15 @@ const renderArticleCarousel = (articles) => {
     const category = categoryKeys[article.category] || article.category.toLowerCase();
 
     return `
-      <article class="product-card journal-carousel-card" data-category="${escapeHtml(category)}">
+      <a class="product-card journal-carousel-card" data-category="${escapeHtml(category)}" href="${escapeHtml(article.href)}" aria-label="Read ${escapeHtml(article.title)}">
         <div class="product-visual" style="--product-image: url('${escapeHtml(article.image)}');" role="img" aria-label="${escapeHtml(article.alt)}"></div>
         <div class="product-body">
           <p class="product-kicker">${escapeHtml(article.category)}</p>
           <h3>${escapeHtml(article.title)}</h3>
           <p>${escapeHtml(article.description)}</p>
-          <a class="product-link" href="${escapeHtml(article.href)}">Read article</a>
+          <span class="product-link">Read article</span>
         </div>
-      </article>
+      </a>
     `;
   }).join("");
 
