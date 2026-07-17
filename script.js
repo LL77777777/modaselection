@@ -1,10 +1,9 @@
 const header = document.querySelector("[data-header]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const filterLinks = document.querySelectorAll("[data-filter-link]");
-const productGrid = document.querySelector("[data-products]");
+const articleCarousel = document.querySelector("[data-products]");
 const carouselPrev = document.querySelector("[data-carousel-prev]");
 const carouselNext = document.querySelector("[data-carousel-next]");
-const managedImages = document.querySelectorAll("[data-managed-image]");
 
 let activeFilter = "all";
 
@@ -16,43 +15,53 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
   "'": "&#039;"
 }[character]));
 
-const normalizeOffers = (offers) => Object.entries(offers)
-  .filter(([, offer]) => offer.enabled !== false)
-  .map(([slug, offer]) => ({ slug, ...offer }));
-
-const getImagePath = (offer, images) => {
-  const image = images[offer.imageKey] || images.default;
-  return image ? image.src : "";
+const categoryKeys = {
+  Style: "style",
+  Beauty: "beauty",
+  Shoes: "shoes",
+  Gear: "gear"
 };
 
-const applyManagedImages = (images) => {
-  managedImages.forEach((element) => {
-    const image = images[element.dataset.managedImage] || images.default;
+const extraArticles = [
+  {
+    href: "/articles/best-wireless-earbuds",
+    image: "/assets/article-wireless-earbuds.jpg",
+    alt: "Unbranded wireless earbuds, charging case, phone, notebook and coffee on a pale wood desk",
+    category: "Gear",
+    title: "New earbuds? What to check before you upgrade",
+    description: "Compare fit, controls, call quality, battery life, repair limits, and the routines a new pair would actually improve."
+  }
+];
 
-    if (!image) {
-      return;
-    }
+const collectArticleData = () => {
+  const homepageArticles = Array.from(document.querySelectorAll(".article-index > a")).map((card) => ({
+    href: card.getAttribute("href") || "#",
+    image: card.querySelector("img")?.getAttribute("src") || "",
+    alt: card.querySelector("img")?.getAttribute("alt") || "",
+    category: card.querySelector("span")?.textContent.trim() || "Journal",
+    title: card.querySelector("strong")?.textContent.trim() || "",
+    description: card.querySelector("p")?.textContent.trim() || ""
+  }));
 
-    element.src = image.src;
-    element.alt = image.alt || "";
-  });
+  return [...homepageArticles, ...extraArticles];
 };
 
-const renderProducts = (offers, images) => {
-  productGrid.innerHTML = offers.map((offer) => {
-    const imagePath = getImagePath(offer, images);
-    const tags = (offer.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
-    const position = offer.imagePosition || "center";
+const renderArticleCarousel = (articles) => {
+  if (!articleCarousel) {
+    return;
+  }
+
+  articleCarousel.innerHTML = articles.map((article) => {
+    const category = categoryKeys[article.category] || article.category.toLowerCase();
 
     return `
-      <article class="product-card" data-category="${escapeHtml(offer.category)}">
-        <div class="product-visual" style="--product-image: url('${escapeHtml(imagePath)}'); background-position: ${escapeHtml(position)};" aria-hidden="true"></div>
+      <article class="product-card journal-carousel-card" data-category="${escapeHtml(category)}">
+        <div class="product-visual" style="--product-image: url('${escapeHtml(article.image)}');" role="img" aria-label="${escapeHtml(article.alt)}"></div>
         <div class="product-body">
-          <p class="product-kicker">${escapeHtml(offer.categoryLabel || offer.category)}</p>
-          <h3>${escapeHtml(offer.title)}</h3>
-          <p>${escapeHtml(offer.description)}</p>
-          <div class="product-meta">${tags}</div>
-          <a class="product-link" href="/${escapeHtml(offer.slug)}" rel="nofollow sponsored">${escapeHtml(offer.cta || "See pick")}</a>
+          <p class="product-kicker">${escapeHtml(article.category)}</p>
+          <h3>${escapeHtml(article.title)}</h3>
+          <p>${escapeHtml(article.description)}</p>
+          <a class="product-link" href="${escapeHtml(article.href)}">Read article</a>
         </div>
       </article>
     `;
@@ -68,56 +77,31 @@ const setActiveFilter = (category) => {
     button.classList.toggle("is-active", button.dataset.filter === category);
   });
 
-  document.querySelectorAll("[data-category]").forEach((card) => {
+  articleCarousel?.querySelectorAll("[data-category]").forEach((card) => {
     const isVisible = category === "all" || card.dataset.category === category;
     card.classList.toggle("is-hidden", !isVisible);
   });
 
-  if (productGrid) {
-    productGrid.scrollTo({ left: 0, behavior: "smooth" });
-  }
+  articleCarousel?.scrollTo({ left: 0, behavior: "smooth" });
 };
 
-const scrollProductCarousel = (direction) => {
-  if (!productGrid) {
+const scrollArticleCarousel = (direction) => {
+  if (!articleCarousel) {
     return;
   }
 
-  const card = productGrid.querySelector(".product-card:not(.is-hidden)");
-  const gap = parseFloat(getComputedStyle(productGrid).columnGap) || 18;
-  const distance = card ? card.getBoundingClientRect().width + gap : productGrid.clientWidth * 0.85;
+  const card = articleCarousel.querySelector(".product-card:not(.is-hidden)");
+  const gap = parseFloat(getComputedStyle(articleCarousel).columnGap) || 18;
+  const distance = card ? card.getBoundingClientRect().width + gap : articleCarousel.clientWidth * 0.85;
 
-  productGrid.scrollBy({
+  articleCarousel.scrollBy({
     left: direction * distance,
     behavior: "smooth"
   });
 };
 
-const loadOfferData = async () => {
-  try {
-    const [offersResponse, imagesResponse] = await Promise.all([
-      fetch("/data/offers.json", { cache: "no-store" }),
-      fetch("/data/images.json", { cache: "no-store" })
-    ]);
-
-    if (!offersResponse.ok || !imagesResponse.ok) {
-      throw new Error("Offer data failed to load.");
-    }
-
-    const [offers, images] = await Promise.all([
-      offersResponse.json(),
-      imagesResponse.json()
-    ]);
-
-    applyManagedImages(images);
-    renderProducts(normalizeOffers(offers), images);
-  } catch (error) {
-    productGrid.innerHTML = "<p class=\"loading-note\">Product picks could not be loaded. Please refresh the page.</p>";
-  }
-};
-
 window.addEventListener("scroll", () => {
-  header.classList.toggle("is-scrolled", window.scrollY > 12);
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
 }, { passive: true });
 
 filterButtons.forEach((button) => {
@@ -128,7 +112,7 @@ filterLinks.forEach((link) => {
   link.addEventListener("click", () => setActiveFilter(link.dataset.filterLink));
 });
 
-carouselPrev?.addEventListener("click", () => scrollProductCarousel(-1));
-carouselNext?.addEventListener("click", () => scrollProductCarousel(1));
+carouselPrev?.addEventListener("click", () => scrollArticleCarousel(-1));
+carouselNext?.addEventListener("click", () => scrollArticleCarousel(1));
 
-loadOfferData();
+renderArticleCarousel(collectArticleData());
