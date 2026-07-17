@@ -12,6 +12,18 @@ Public contact email:
 info@modaselection.com
 ```
 
+## Codex Maintenance Notes
+
+When returning to this project, read this README first and inspect the current files before editing.
+
+When adding a new article:
+
+1. Create the article HTML file inside `articles/`.
+2. Add the article entry to the homepage `Deep reads` section in `index.html`.
+3. Add the article URL to `sitemap.xml`.
+4. If the article needs a product link, add the offer first in `data/offers.json`.
+5. Commit changes and run `git push`; Cloudflare Pages will deploy automatically.
+
 ## Local Preview
 
 Run a small local server so the JSON offer files can load. VS Code Live Server, Cloudflare Pages preview, or any static server will work.
